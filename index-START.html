@@ -49,15 +49,33 @@
     const investorsFirstLastName = inventors.map((inventor) => inventor.first && inventor.last && !inventor.year || !inventor.passed);
     console.log(investorsFirstLastName);
     // The tutorial:
-
+    const fullNames = inventors.map(inventor => inventor.first + ' ' + inventor.last);
+    console.log(fullNames);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    // I wasnt sure on how to do this one so I followed this, I get the funtion a and b and why the if else is used but the 1 and -1 I dont know why?
+    const ordered = inventors.sort(function(a, b){
+      if(a.year > b.year){
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    console.log(ordered);
+
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    // you can use a for loop here but we have to use a reduce element..
+    const totalYears = inventors.reduce((total, inventor) =>{
+      return total + (inventor.passed - inventor.year);
+    },0); 
+    console.log(totalYears);
+    //Followed tutorial
 
     // 5. Sort the inventors by years lived
+    
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
