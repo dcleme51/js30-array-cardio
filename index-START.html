@@ -44,8 +44,12 @@
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-    const investorsFirstLastName = inventors.filter((inventor) => inventor.first && inventor.last);
+    //Using the array I followed the similar concept but targeting the array within to filter and retrive First and last name and not year or passed.
+    //The below didnt work but I dont seem to get why it didnt work?
+    const investorsFirstLastName = inventors.map((inventor) => inventor.first && inventor.last && !inventor.year || !inventor.passed);
     console.log(investorsFirstLastName);
+    // The tutorial:
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
